@@ -25,7 +25,6 @@ public class University {
         setStudent(student);
     }
     public Integer gpaCounter(){
-        //System.out.println(knowledgePoints);
         int gpa = knowledgePoints.stream()
                     .mapToInt(i -> i.intValue())
                     .sum() / knowledgePoints.size();
