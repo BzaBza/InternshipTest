@@ -1,16 +1,22 @@
 package institution;
 
-import java.util.Random;
 import person.Student;
 import person.consciousness.Knowledge;
+
 import java.util.ArrayList;
-import java.util.stream;
+import java.util.Random;
 
 public class University {
-    private ArrayList<Student> students = new ArrayList<Student>();
-    private ArrayList<Integer> knowledgePoints = new ArrayList<Integer>();
+    private ArrayList<Student> students = new ArrayList<>();
+    private ArrayList<Integer> knowledgePoints = new ArrayList<>();
+    private String universityName;
+
     public University(String name) {
-        //TODO: Implementation is needed
+        universityName = name;
+    }
+
+    public String getName() {
+        return universityName;
     }
 
     public void setStudent(Student student) {
@@ -24,13 +30,13 @@ public class University {
         student.setKnowledge(new Knowledge(randomNum));
         setStudent(student);
     }
-    public Integer gpaCounter(){
-        int gpa = knowledgePoints.stream()
-                    .mapToInt(i -> i.intValue())
-                    .sum() / knowledgePoints.size();
+
+    public Integer gpaCounter() {
+        int gpa = knowledgePoints.stream().mapToInt(i -> i.intValue()).sum() / knowledgePoints.size();
         return gpa;
     }
-    public ArrayList<Student> getStudents(){
+
+    public ArrayList<Student> getStudents() {
         return students;
     }
 

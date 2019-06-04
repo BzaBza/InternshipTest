@@ -8,12 +8,18 @@ import institution.University;
 public class Internship {
     private ArrayList<String> studentName = new ArrayList<String>();
     private int gpa;
+    private String internshipName;
+
     public Internship(String name) {
-        //TODO: Implementation is needed
+        internshipName = name;
+    }
+
+    public String getName() {
+        return internshipName;
     }
 
     public void setStudent(Student student) {
-        if(student.getKnowledgeValue() > gpa){
+        if (student.getKnowledgeValue() > gpa) {
             studentName.add(student.getStudentName());
         }
     }
