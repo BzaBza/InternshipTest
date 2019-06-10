@@ -6,7 +6,7 @@ import person.Student;
 import institution.University;
 
 public class Internship {
-    private ArrayList<String> studentName = new ArrayList<String>();
+    private ArrayList<String> studentName = new ArrayList<>();
     private int gpa;
     private String internshipName;
 
@@ -18,7 +18,7 @@ public class Internship {
         return internshipName;
     }
 
-    public void setStudent(Student student) {
+    private void setStudent(Student student) {
         if (student.getKnowledgeValue() > gpa) {
             studentName.add(student.getStudentName());
         }
@@ -26,7 +26,7 @@ public class Internship {
 
     public ArrayList<String> getStudents(University university) {
         gpa = university.gpaCounter();
-        university.getStudents().forEach(student -> setStudent(student));
+        university.getStudents().forEach(this::setStudent);
         return studentName;
     }
 }

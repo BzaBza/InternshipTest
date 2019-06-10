@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class University {
     private ArrayList<Student> students = new ArrayList<>();
-    private ArrayList<Integer> knowledgePoints = new ArrayList<>();
+    private int knowledgePoints ;
     private String universityName;
 
     public University(String name) {
@@ -19,9 +19,9 @@ public class University {
         return universityName;
     }
 
-    public void setStudent(Student student) {
+    private void setStudent(Student student) {
         students.add(student);
-        knowledgePoints.add(student.getKnowledgeValue());
+        knowledgePoints += student.getKnowledgeValue();
     }
 
     public void addStudent(Student student) {
@@ -32,8 +32,7 @@ public class University {
     }
 
     public Integer gpaCounter() {
-        int gpa = knowledgePoints.stream().mapToInt(i -> i.intValue()).sum() / knowledgePoints.size();
-        return gpa;
+        return knowledgePoints / students.size();
     }
 
     public ArrayList<Student> getStudents() {

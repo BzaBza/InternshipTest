@@ -3,8 +3,11 @@ package main;
 import institution.University;
 import institution.interlink.Internship;
 import person.Student;
+import person.consciousness.Knowledge;
 import server.FileStudentsReceiver;
 import server.StudentsReceiver;
+
+import java.util.Random;
 
 public class Application {
     public static void main(String[] args) {
@@ -14,7 +17,6 @@ public class Application {
         if (studentsReceiver.getStudents() != null) {
             for (int i = 0; i < studentsReceiver.getStudents().length; i++) {
                 university.addStudent(new Student(studentsReceiver.getStudents()[i]));
-
             }
         }
 
