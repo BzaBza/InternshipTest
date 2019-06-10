@@ -1,10 +1,8 @@
 package institution;
 
 import person.Student;
-import person.consciousness.Knowledge;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class University {
     private ArrayList<Student> students = new ArrayList<>();
@@ -25,9 +23,6 @@ public class University {
     }
 
     public void addStudent(Student student) {
-        Random rand = new Random();
-        int randomNum = rand.nextInt((10 - 1) + 1) + 1;
-        student.setKnowledge(new Knowledge(randomNum));
         setStudent(student);
     }
 

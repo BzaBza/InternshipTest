@@ -6,16 +6,17 @@ public class Student {
     private int knowledgeValue;
     private String studentName;
 
-    public Student(String name) {
+    public Student(String name, int randomKnowledgeValue) {
         studentName = name;
+        setKnowledge(new Knowledge(randomKnowledgeValue));
     }
 
-    public void setKnowledge(Knowledge knowledge) {
-        knowledgeValue = knowledge.getKnowledge();
+    private void setKnowledge(Knowledge knowledge) {
+        knowledgeValue =  knowledge.getKnowledge();
     }
 
     public Integer getKnowledgeValue() {
-        return knowledgeValue;
+        return  knowledgeValue;
     }
 
     public String getStudentName() {

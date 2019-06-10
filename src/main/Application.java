@@ -16,7 +16,9 @@ public class Application {
         StudentsReceiver studentsReceiver = new FileStudentsReceiver();
         if (studentsReceiver.getStudents() != null) {
             for (int i = 0; i < studentsReceiver.getStudents().length; i++) {
-                university.addStudent(new Student(studentsReceiver.getStudents()[i]));
+                Random rand = new Random();
+                int randomNum = rand.nextInt((10 - 1) + 1) + 1;
+                university.addStudent(new Student(studentsReceiver.getStudents()[i], randomNum));
             }
         }
 
