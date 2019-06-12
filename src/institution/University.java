@@ -18,8 +18,12 @@ public class University {
     }
 
     private void setStudent(Student student) {
+        int knowledgeSum = 0;
         students.add(student);
-        knowledgePoints += student.getKnowledgeValue();
+        for (Student student1 : students) {
+            knowledgeSum += student1.getKnowledgeValue();
+        }
+        knowledgePoints = knowledgeSum;
     }
 
     public void addStudent(Student student) {
